@@ -65,16 +65,23 @@ list_students.jsp
 ```
 ---
 
+
 ### Exercise 5 — Search functionality
 
+Search results: <br>
 ![Search results: ](./resultEx/searchFunction.png)
 
 ### Exercise 6 — Validation enhancement
 
+Validation email: <br>
 ![Validation email: ](./resultEx/validateEmail.png)
-<br>
+<br><br>
 
+Validation student code: <br>
 ![Validation student code: ](./resultEx/validateCode.png)
+
 ### Exercise 7 — UX improvements & Pagination
 
+Pagination: <br>
 ![Pagination: ](./resultEx/paginate.png)
+
