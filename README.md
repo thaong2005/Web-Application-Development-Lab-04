@@ -63,5 +63,18 @@ delete_student.jsp
     ↓ DELETE DB
 list_students.jsp
 ```
-
 ---
+
+### Exercise 5 — Search functionality
+
+![Search results: ](./resultEx/searchFunction.png)
+
+### Exercise 6 — Validation enhancement
+
+![Validation email: ](./resultEx/validateEmail.png)
+<br>
+
+![Validation student code: ](./resultEx/validateCode.png)
+### Exercise 7 — UX improvements & Pagination
+
+![Pagination: ](./resultEx/paginate.png)
