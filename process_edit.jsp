@@ -5,6 +5,7 @@
     String fullName = request.getParameter("full_name");
     String email = request.getParameter("email");
     String major = request.getParameter("major");
+    String studentCode = request.getParameter("student_code");
     
     if (idParam == null || fullName == null || fullName.trim().isEmpty()) {
         response.sendRedirect("list_students.jsp?error=Invalid data");
@@ -23,6 +24,20 @@
             "root",
             "1234567890"
         );
+        
+        // Validate email if provided
+        if (email != null && !email.trim().isEmpty()) {
+            if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+                response.sendRedirect("edit_student.jsp?id=" + studentId + "&error=Invalid email format");
+                return;
+            }
+        }
+
+        // Validate student code pattern (should be 2 uppercase letters + 3+ digits)
+        if (studentCode != null && !studentCode.matches("[A-Z]{2}[0-9]{3,}")) {
+            response.sendRedirect("edit_student.jsp?id=" + studentId + "&error=Invalid student code format");
+            return;
+        }
         
         String sql = "UPDATE students SET full_name = ?, email = ?, major = ? WHERE id = ?";
         pstmt = conn.prepareStatement(sql);

@@ -11,6 +11,20 @@
         response.sendRedirect("add_student.jsp?error=Required fields are missing");
         return;
     }
+
+    // Student code pattern validation: 2 uppercase letters followed by 3+ digits
+    if (studentCode != null && !studentCode.matches("[A-Z]{2}[0-9]{3,}")) {
+        response.sendRedirect("add_student.jsp?error=Invalid student code format (e.g. SV001)");
+        return;
+    }
+
+    // Email validation (optional field)
+    if (email != null && !email.trim().isEmpty()) {
+        if (!email.matches("^[A-Za-z0-9+_.-]+@(.+)$")) {
+            response.sendRedirect("add_student.jsp?error=Invalid email format");
+            return;
+        }
+    }
     
     Connection conn = null;
     PreparedStatement pstmt = null;
