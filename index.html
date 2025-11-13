@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Student Management System</h1>
+        
+        <div class="form-container">
+            <h2 id="form-title">Add New Student</h2>
+            <form id="student-form">
+                <input type="hidden" id="student-id">
+                
+                <div class="form-group">
+                    <label for="student-name">Name:</label>
+                    <input type="text" id="student-name" placeholder="Enter student name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student-email">Email:</label>
+                    <input type="email" id="student-email" placeholder="Enter student email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student-age">Age:</label>
+                    <input type="number" id="student-age" placeholder="Enter student age" min="1" max="150" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="student-major">Major:</label>
+                    <input type="text" id="student-major" placeholder="Enter student major" required>
+                </div>
+                
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary" id="submit-btn">Add Student</button>
+                    <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="student-list-container">
+            <h2>Student List</h2>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search students by name, email, or major...">
+            </div>
+            <div id="student-list"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
